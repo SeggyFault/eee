@@ -1,0 +1,30 @@
+{% extends "section.twig" %}
+
+{% block section_content %}
+	<div class="flex flex-col gap-8 md:gap-16 md:flex-row">
+		<div class="flex flex-col gap-4 md:w-1/2 max-w-prose">
+			<div class="flex flex-col gap-2">
+				<h2 class="text-blue-300">{{ heading }}</h2>
+				{% if text %}
+					<p>{{ text }}</p>
+				{% endif %}
+			</div>
+			{% if button %}
+				{% include 'button/template.twig' with {
+					classes: 'w-full',
+					title: button.title,
+					url: button.url,
+					target: button.target,
+					type: 'primary'
+				} %}
+			{% endif %}
+		</div>
+		{% if image %}
+			{% include 'image/template.twig' with {
+				classes: 'md:w-1/2 object-cover',
+				image: image,
+				allowed_sizes: ['lg', 'xl'],
+			} %}
+		{% endif %}
+	</div>
+{% endblock %}

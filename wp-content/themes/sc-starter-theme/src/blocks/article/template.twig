@@ -1,0 +1,20 @@
+{% extends "section.twig" %}
+
+{% block section_content %}
+	<div class="flex gap-8">
+    <div class="max-w-[160px]">
+      {% include 'image/template.twig' with {
+        class: '',
+        image: image,
+        allowed_sizes: ['sm', 'md'],
+      } %}
+    </div>
+    <div class="flex flex-col">
+      <div class="flex gap-5">
+        <span>{{ date }}</span>
+        <span>{{ reading_time }}</span>
+      </div>
+      <h2>{{ heading }}</h2>
+    </div>
+	</div>
+{% endblock %}
