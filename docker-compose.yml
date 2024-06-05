@@ -1,0 +1,82 @@
+# @package docker-wordpress-local
+# @version: 1.1.0
+
+services:
+  db:
+    container_name: ${NAME}-db
+    image: mysql:8.0
+    ports:
+      - 3306:3306
+    volumes:
+      - db:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+    command: --default-authentication-plugin=mysql_native_password
+
+  wp:
+    container_name: ${NAME}-wp
+    depends_on:
+      - db
+    build:
+      context: .
+      dockerfile: .docker/wp/Dockerfile
+      args:
+        PHP_VERSION: ${PHP_VERSION:-8.2}
+        PHP_MAX_INPUT_VARS: ${PHP_MAX_INPUT_VARS:-4000}
+        PHP_MEMORY_LIMIT: ${PHP_MEMORY_LIMIT:-1024M}
+        PHP_MAX_EXECUTION_TIME: ${PHP_MAX_EXECUTION_TIME:-60}
+    restart: always
+    environment:
+      XDEBUG_MODE: "${XDEBUG_MODE}"
+      XDEBUG_CONFIG: "client_host=host.docker.internal output_dir=/tmp/profiling profiler_output_name=cachegrind.out.%s.%u"
+    env_file:
+      - .env
+    volumes:
+      - ./:/var/www/html
+      - ./profiling:/tmp/profiling
+
+  nginx:
+    container_name: ${NAME}-nginx
+    depends_on:
+      - wp
+    image: nginx:alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    env_file:
+      - .env
+    environment:
+      - "DOMAIN=${DOMAIN}"
+    volumes:
+      - ./:/var/www/html
+      - ./.docker/certs:/etc/ssl
+      - ./.docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+
+  cli:
+    container_name: ${NAME}-cli
+    image: wordpress:cli-php${PHP_VERSION:-8.2}
+    volumes_from:
+      - wp
+    links:
+      - db
+    env_file:
+      - .env
+    entrypoint: wp
+    command: "--info"
+
+  mailhog:
+    container_name: ${NAME}-mailhog
+    image: mailhog/mailhog
+    restart: always
+    ports:
+      - 1025:1025
+      - 8025:8025
+
+volumes:
+  db:
+  certs:
