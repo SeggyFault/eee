@@ -18,17 +18,24 @@
  * @package WordPress
  */
 
-// Database settings.
-define( 'DB_NAME', getenv( 'DB_NAME' ) );
-define( 'DB_USER', getenv( 'DB_USER' ) );
-define( 'DB_PASSWORD', getenv( 'DB_PASSWORD' ) );
-define( 'DB_HOST', getenv( 'DB_HOST' ) );
-define( 'DB_CHARSET', 'utf8' );
-define( 'DB_COLLATE', '' );
+// ** Database settings - You can get this info from your web host ** //
+/** The name of the database for WordPress */
+define( 'DB_NAME', 'database_name_here' );
 
-// Site URL settings.
-define( 'WP_SITEURL', getenv( 'WP_SITEURL' ) );
-define( 'WP_HOME', getenv( 'WP_HOME' ) );
+/** Database username */
+define( 'DB_USER', 'username_here' );
+
+/** Database password */
+define( 'DB_PASSWORD', 'password_here' );
+
+/** Database hostname */
+define( 'DB_HOST', 'localhost' );
+
+/** Database charset to use in creating database tables. */
+define( 'DB_CHARSET', 'utf8' );
+
+/** The database collate type. Don't change this if in doubt. */
+define( 'DB_COLLATE', '' );
 
 /**#@+
  * Authentication unique keys and salts.
@@ -72,7 +79,7 @@ $table_prefix = 'wp_';
  *
  * @link https://wordpress.org/documentation/article/debugging-in-wordpress/
  */
-define( 'WP_DEBUG', true );
+define( 'WP_DEBUG', false );
 
 /* Add any custom values between this line and the "stop editing" line. */
 
