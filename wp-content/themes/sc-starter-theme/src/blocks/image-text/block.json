@@ -1,0 +1,16 @@
+{
+	"name": "acf/image-text",
+	"title": "Image Text",
+	"description": "",
+	"category": "somoscuatro",
+	"icon": "",
+	"acf": {
+		"mode": "edit",
+		"renderCallback": "Somoscuatro\\Starter_Theme\\Blocks\\Image_Text\\Image_Text::render_callback"
+	},
+	"supports": {
+		"anchor": true,
+		"mode": false
+	},
+	"align": "full"
+}

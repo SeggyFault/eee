@@ -1,0 +1,15 @@
+{% extends "section.twig" %}
+
+{% block section_content %}
+  <div>
+    {% include "image/template.twig" with {
+      image: image,
+      allowed_sizes: ['md', 'lg']
+    } %}
+  </div>
+  <div>
+    <p>{{ text }}</p>
+    <h2>{{ heading }}</h2>
+    <p>{{ subtext }}</p>
+  </div>
+{% endblock %}
