@@ -1,0 +1,10 @@
+{% extends "section.twig" %}
+
+{% block section_content %}
+	<div>
+    {% for item in items %}
+      {{ item.year }}
+      {{ item.text }}
+    {% endfor %}
+  </div>
+{% endblock %}
