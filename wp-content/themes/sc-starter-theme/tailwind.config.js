@@ -27,6 +27,9 @@ module.exports = {
 				syne: ['Syne', 'Helvetica Neue', 'Arial', 'sans-serif'],
 			},
 			colors: tailwindColorPalette,
+      backgroundImage: {
+        'hero-image': "url('/wp-content/themes/sc-starter-theme/assets/images/hero-image.png')",
+      }
 		},
 	},
 	plugins: [],
