@@ -1,10 +1,16 @@
 {% extends "section.twig" %}
 
 {% block section_content %}
-	<div>
+	<div class="overflow-x-scroll overflow-y-hidden flex">
     {% for item in items %}
-      {{ item.year }}
-      {{ item.text }}
+    <div class="flex flex-col gap-4 w-64">
+      <h3 class="text-6xl px-8">{{ item.year }}</h3>
+      <div class="relative h-8 flex items-center">
+        <div class="absolute w-8 h-8 rounded-full bg-eee-lime-100 left-8"></div>
+        <div class="h-[1px] w-full bg-stone-400"></div>
+      </div>
+      <p class="text-lg px-8 leading-6">{{ item.text }}</p> 
+    </div>
     {% endfor %}
   </div>
 {% endblock %}
