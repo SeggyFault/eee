@@ -30,6 +30,6 @@
 	}
 
 	p {
-		@apply font-jost text-base;
+		@apply font-jost text-lg;
 	}
 }
