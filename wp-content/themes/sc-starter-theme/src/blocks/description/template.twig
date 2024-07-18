@@ -1,8 +1,8 @@
 {% extends "section.twig" %}
 
 {% block section_content %}
-	<section class="flex">
-      <h2> {{ heading }} </h2>
-      <p> {{ text }} </p>
+	<section class="flex flex-col gap-2 md:flex-row">
+    <h2 class="md:basis-1/4 text-xl">{{ heading }}</h2>
+    <p class="md:basis-3/4">{{ text }}</p>
   </section>
 {% endblock %}
