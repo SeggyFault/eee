@@ -23,8 +23,7 @@ module.exports = {
 		},
 		extend: {
 			fontFamily: {
-				jost: ['Jost', 'Helvetica Neue', 'Arial', 'sans-serif'],
-				syne: ['Syne', 'Helvetica Neue', 'Arial', 'sans-serif'],
+				ebgaramond: ['EBGaramond', 'Times New Roman', 'serif'],
 			},
 			colors: tailwindColorPalette,
       backgroundImage: {
