@@ -12,7 +12,7 @@ const changeSiteHeaderStyle = (isScrolled) => {
   const logoWhite = siteHeader.querySelector('.logo-white');
   const logoBlack = siteHeader.querySelector('.logo-black');
   const isHeroBlockPresent = document.querySelector('#hero-block');
-  const sideMenu = siteHeader.querySelector('.side-menu');
+  const sideMenu = <HTMLElement>siteHeader.querySelector('.side-menu');
 
   const setStyles = (position, bgColor, linkColor, showLogoWhite, borderColor, sideMenuColor) => {
     siteHeader.style.position = position;
@@ -24,7 +24,7 @@ const changeSiteHeaderStyle = (isScrolled) => {
     logoWhite.classList.toggle('hidden', !showLogoWhite);
     logoBlack.classList.toggle('hidden', showLogoWhite);
     sideMenu.style.color = sideMenuColor;
-    sideMenu.style.strokeColor = sideMenuColor;
+    sideMenu.style.stroke = sideMenuColor;
   };
 
   if (isHeroBlockPresent) {
