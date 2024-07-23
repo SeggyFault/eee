@@ -1,4 +1,8 @@
 @layer base {
+  body {
+    @apply text-eee-neutral-200;
+  }
+
 	h1,
 	.h1 {
 		@apply font-syne text-4xl font-semibold;
