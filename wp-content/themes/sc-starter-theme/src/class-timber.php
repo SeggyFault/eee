@@ -53,6 +53,9 @@ class Timber {
 		$context['homepage_url'] = get_home_url();
 
 		$context = $this->get_menus( $context );
+    
+    $context['logo_white'] = esc_url( get_stylesheet_directory_uri() ) . '/assets/images/logo-white.svg';
+    $context['logo_black'] = esc_url( get_stylesheet_directory_uri() ) . '/assets/images/logo-black.svg';
 
 		$context['wp_footer_exists'] = function_exists( 'wp_footer' );
 
