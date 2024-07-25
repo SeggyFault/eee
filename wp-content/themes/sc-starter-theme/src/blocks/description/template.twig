@@ -1,8 +1,6 @@
-{% extends "section.twig" %}
-
-{% block section_content %}
-	<section class="flex flex-col gap-2 md:flex-row">
-    <h2 class="md:basis-1/4 text-xl">{{ heading }}</h2>
-    <p class="md:basis-3/4">{{ text }}</p>
-  </section>
-{% endblock %}
+<section class="border-b border-eee-blue-green-rules-100">
+  <div class="container flex flex-col gap-2 md:flex-row">
+    <h2 class="md:basis-1/4 text-xl py-10">{{ heading }}</h2>
+    <p class="md:basis-3/4 border-l border-eee-blue-green-rules-100 py-10">{{ text }}</p>
+  </div>
+</section>
