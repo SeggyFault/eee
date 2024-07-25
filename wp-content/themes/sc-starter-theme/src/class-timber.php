@@ -57,6 +57,17 @@ class Timber {
     $context['logo_white'] = esc_url( get_stylesheet_directory_uri() ) . '/assets/images/logo-white.svg';
     $context['logo_black'] = esc_url( get_stylesheet_directory_uri() ) . '/assets/images/logo-black.svg';
 
+    $context['contacts'] = array(
+      'email' => get_theme_mod('contact_email'),
+      'phone' => get_theme_mod('contact_phone'),
+      'address' => get_theme_mod('contact_address'),
+    );
+
+    $context['social_media'] = array(
+      'facebook' => get_theme_mod('facebook_link'),
+      'linkedin' => get_theme_mod('linkedin_link'),
+    );
+
 		$context['wp_footer_exists'] = function_exists( 'wp_footer' );
 
 		$context['copyright_text'] = sprintf(
