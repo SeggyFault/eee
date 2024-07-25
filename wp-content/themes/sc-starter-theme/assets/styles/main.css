@@ -12,6 +12,7 @@
 
 /** Import files */
 @import "./global/_typo.css";
+@import "./components/_slider.css";
 
 /** Import Tailwind CSS Config */
 /* stylelint-disable-next-line at-rule-no-unknown */

@@ -140,6 +140,10 @@ class Timber {
 			new TwigFunction( 'enqueue_script', array( $this, 'enqueue_script' ) )
 		);
 
+    $twig->addFunction(
+			new TwigFunction( 'enqueue_style', array( $this, 'enqueue_style' ) )
+		);
+
 		$twig->addFunction(
 			new TwigFunction( 'get_static_asset', array( $this, 'get_static_asset' ) )
 		);
@@ -180,6 +184,15 @@ class Timber {
 	 */
 	public function enqueue_script( string $handle ): void {
 		wp_enqueue_script( $handle );
+	}
+
+  /**
+	 * Enqueue Block Styles.
+	 *
+	 * @param string $handle The Style Handle.
+	 */
+	public function enqueue_style( string $handle ): void {
+		wp_enqueue_style( $handle );
 	}
 
 	/**

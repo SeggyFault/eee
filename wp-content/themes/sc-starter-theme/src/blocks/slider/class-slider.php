@@ -1,0 +1,94 @@
+<?php
+/**
+ * Contains Somoscuatro\Starter_Theme\BLocks\Slider\Slider Class.
+ *
+ * @package sc-starter-theme
+ */
+
+declare(strict_types=1);
+
+namespace Somoscuatro\Starter_Theme\Blocks\Slider;
+
+use Somoscuatro\Starter_Theme\Blocks\Block;
+use Somoscuatro\Starter_Theme\Helpers\Filesystem;
+
+/**
+ * Block Main Functionality.
+ */
+class Slider extends Block {
+
+  use Filesystem;
+
+	/**
+	 * The Prefix Used for ACF Blocks.
+	 *
+	 * @var string
+	 */
+	public static $acf_block_prefix = 'block_slider';
+
+	/**
+	 * Gets the ACF Block Fields.
+	 *
+	 * @return array The ACF Block Fields.
+	 */
+	public function get_acf_fields(): array {
+		return array(
+			'key'      => 'group_' . static::$acf_block_prefix,
+			'title'    => __( 'Block: Slider', 'sc-starter-theme' ),
+			'fields'   => array(
+				array(
+          'key'           => 'field_' . static::$acf_block_prefix . '_heading',
+          'label'         => __( 'Heading', 'sc-starter-theme' ),
+          'name'          => static::$acf_block_prefix . '_heading',
+          'type'          => 'text',
+          'required'      => 1,
+          'return_format' => 'string',
+        ),
+				array(
+          'key'           => 'field_' . static::$acf_block_prefix . '_slides',
+          'label'         => __( 'Slides', 'sc-starter-theme' ),
+          'name'          => static::$acf_block_prefix . '_slides',
+          'type'          => 'repeater',
+          'layout' => 'row',
+          'sub_fields'   => array(
+            array(
+              'key'           => 'field_' . static::$acf_block_prefix . '_logo',
+              'label'         => __( 'Logo', 'sc-starter-theme' ),
+              'name'          => static::$acf_block_prefix . '_logo',
+              'type'          => 'image',
+              'required'      => 1,
+              'parent_repeater' => 'field_' . static::$acf_block_prefix . '_slides',
+            ),
+            array(
+              'key'           => 'field_' . static::$acf_block_prefix . '_bg_image',
+              'label'         => __( 'Background image', 'sc-starter-theme' ),
+              'name'          => static::$acf_block_prefix . '_bg_image',
+              'type'          => 'image',
+              'required'      => 1,
+              'parent_repeater' => 'field_' . static::$acf_block_prefix . '_slides',
+            ),
+          )
+        ),
+			),
+			'location' => array(
+				array(
+					array(
+						'param'    => 'block',
+						'operator' => '==',
+						'value'    => 'acf/slider',
+					),
+				),
+			),
+		);
+	}
+
+  /**
+	 * Registers Block Assets.
+	 */
+	public function register_assets(): void {
+    wp_register_script( 'glide-js', 'https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.2/dist/glide.min.js', array(), '3.6.2');
+    wp_register_style( 'glide-css', 'https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.2/dist/css/glide.core.min.css', array(), '3.6.2' );
+
+    wp_register_script( 'slider-js', $this->get_base_url() . '/dist/scripts/slider.js', array(), $this->get_filemtime( 'scripts/slider.js' ), true );
+  }
+}
