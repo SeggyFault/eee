@@ -2,7 +2,8 @@
   <div class="glide__track" data-glide-el="track">
     <ul class="glide__slides">
       {% for slide in slides %}
-        <li class="glide__slide">
+        <li class="glide__slide relative">
+         <h2 class="text-eee-neutral-100 absolute top-16 left-1/2 -translate-x-1/2 text-xl">{{ heading }}</h2>
           <div class="flex justify-center items-center h-[576px] bg-no-repeat bg-cover bg-eee-neutral-900/75 bg-blend-multiply" style="background-image: url({{ slide.bg_image.url }})">
             <div class="max-w-[512px]">
               {% include "image/template.twig" with {
