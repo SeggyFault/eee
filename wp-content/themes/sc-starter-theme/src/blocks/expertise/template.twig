@@ -1,0 +1,10 @@
+<section class="container pb-16">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
+    {% for item in items %}
+        <div class="flex justify-center items-center h-[297px] bg-no-repeat bg-cover bg-blend-overlay bg-eee-neutral-900/40" style="background-image: url({{ item.image.url }})">
+          <p class="text-eee-neutral-100">{{ item.text }}</p>
+        </div>
+      {% endfor %}
+  </div>
+</section>
+
