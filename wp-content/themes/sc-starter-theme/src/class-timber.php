@@ -163,6 +163,10 @@ class Timber {
 			new TwigFunction( 'get_image_srcset', array( $this, 'get_image_srcset' ) )
 		);
 
+    $twig->addFunction(
+			new TwigFunction( 'get_reading_time', array( $this, 'get_reading_time' ) )
+		);
+
 		return $twig;
 	}
 
@@ -251,4 +255,18 @@ class Timber {
 
 		return $srcset;
 	}
+
+  /**
+   * Gets the post reading time.
+   * 
+   * @return string The post reading time.
+   */
+  public function get_reading_time(): string {
+    $post_content = get_post_field( 'post_content', get_the_ID() );
+
+    $word_count = str_word_count( wp_strip_all_tags( $post_content ));
+    $reading_time = ceil( $word_count / 200 );
+
+    return sprintf( __('%d minutes', 'sc-starter-theme'), $reading_time );
+  }
 }

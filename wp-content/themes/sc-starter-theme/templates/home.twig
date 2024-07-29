@@ -1,0 +1,26 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+  <div class="container">
+    {% for post in posts %}
+        <article class="flex gap-8 py-10 border-b border-eee-blue-green-rules-100">
+          <div class="min-w-[330px]">
+            {% include "image/template.twig" with {
+              image: function('acf_get_attachment', function('get_post_thumbnail_id', post.ID)),
+              width: 330,
+              allowed_sizes: ['md', 'lg']
+            } %}
+          </div>
+          <div>
+            <div class="flex gap-1 pb-2">
+              <p>{{ post.date }}</p>
+              <p><span class="text-eee-green-100">•</span> {{ get_reading_time() }}</p>
+            </div>
+            <a href="{{ post.guid }}">
+              <h3>{{ post.title }}</h3>
+            </a>
+          </div>
+      </article>
+      {% endfor %}
+  </div>
+{% endblock %}

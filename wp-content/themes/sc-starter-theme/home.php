@@ -12,7 +12,6 @@ namespace Somoscuatro\Starter_Theme;
 use Timber\Timber as TimberLibrary;
 
 $context = TimberLibrary::context();
+$context['posts'] = TimberLibrary::get_posts();
 
-var_dump('hello');
-
-TimberLibrary::render( 'index.twig', $context );
+TimberLibrary::render( 'home.twig', $context );
