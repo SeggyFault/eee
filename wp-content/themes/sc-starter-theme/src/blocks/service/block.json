@@ -1,0 +1,16 @@
+{
+	"name": "acf/service",
+	"title": "Service",
+	"description": "",
+	"category": "somoscuatro",
+	"icon": "",
+	"acf": {
+		"mode": "edit",
+		"renderCallback": "Somoscuatro\\Starter_Theme\\Blocks\\Service\\Service::render_callback"
+	},
+	"supports": {
+		"anchor": true,
+		"mode": false
+	},
+	"align": "full"
+}
