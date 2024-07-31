@@ -19,21 +19,20 @@
   </div>
   <div class="glide__arrows" data-glide-el="controls">
     <button class="glide__arrow glide__arrow--left absolute top-1/2 -translate-y-1/2 left-8" data-glide-dir="{{ '<'|escape }}">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-12 fill-white">
-        <path fill-rule="evenodd" d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
-      </svg>
+      {% include "icons/arrow.twig" with {
+        classes: "stroke-eee-neutral-100 size-12",
+      } %}
     </button>
     <button class="glide__arrow glide__arrow--right absolute top-1/2 -translate-y-1/2 right-8" data-glide-dir="{{ '>'|escape }}">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-12 fill-white">
-        <path fill-rule="evenodd" d="M12.97 3.97a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l6.22-6.22H3a.75.75 0 0 1 0-1.5h16.19l-6.22-6.22a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-      </svg>
+      {% include "icons/arrow.twig" with {
+        classes: "stroke-eee-neutral-100 rotate-180 size-12",
+      }%}
     </button>
   </div>
   <div class="glide__bullets absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2" data-glide-el="controls[nav]">
     {% for key, slide in slides %}
       <button class="glide__bullet w-5 h-5 rounded-full border border-eee-neutral-100" data-glide-dir="={{ key }}"></button>
     {% endfor %}
-    
   </div>
 </div>
 
