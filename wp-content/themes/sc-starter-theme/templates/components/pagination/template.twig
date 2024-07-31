@@ -2,12 +2,16 @@
       {# Left arrow #}
       {% if posts.pagination.prev %}
         <a href="{{ posts.pagination.prev.link }}">
-         {% include "icons/arrow.twig" %}
+          {% include "icons/arrow.twig" with {
+              classes: "size-6",
+            } 
+          %}
         </a>
        {% else %}
           {% include "icons/arrow.twig" with {
-            classes: "stroke-eee-blue-green-rules-100",
-         } %}
+              classes: "stroke-eee-blue-green-rules-100 size-6",
+            } 
+          %}
        {% endif %}  
 
       {% for page in posts.pagination.pages  %}
@@ -22,12 +26,14 @@
       {% if posts.pagination.next %}
         <a href="{{ posts.pagination.next.link }}">
           {% include "icons/arrow.twig" with {
-            classes: "rotate-180",
-          }%}
+            classes: "rotate-180 size-6",
+            }
+          %}
         </a>
        {% else %}
            {% include "icons/arrow.twig" with {
-            classes: "rotate-180 stroke-eee-blue-green-rules-100",
-          }%}
+              classes: "rotate-180 stroke-eee-blue-green-rules-100 size-6",
+            }
+          %}
        {% endif %}  
     </div>
