@@ -1,6 +1,6 @@
 # Dist folders
-wp-content/themes/somoscuatro/dist
-wp-content/themes/somoscuatro/src/blocks/**/fields.json
+wp-content/themes/sc-starter-theme/dist
+wp-content/themes/sc-starter-theme/src/blocks/**/fields.json
 
 # WordPress
 /wp-config.php
@@ -24,7 +24,11 @@ wp-content/themes/somoscuatro/src/blocks/**/fields.json
 # Ignore cache files
 /wp-content/litespeed/
 /wp-content/cache/
+/wp-content/languages/mo-cache/
 /wp-content/autoptimize_404_handler.php
+
+# Ignore WPML generated translation files
+/wp-content/languages/wpml/
 
 # Plugin ewww-image-optimizer
 /wp-content/ewww/
@@ -40,7 +44,7 @@ wp-content/themes/somoscuatro/src/blocks/**/fields.json
 
 # Dependencies
 /vendor
-/wp-content/themes/somoscuatro/vendor
+/wp-content/themes/sc-starter-theme/vendor
 node_modules/
 
 # SQL dumps
@@ -62,6 +66,8 @@ php_errorlog
 .idea/
 .well-known
 /tags
+.github/.version
+.github/.release-notes
 
 # Patch/diff artifacts
 *.diff
