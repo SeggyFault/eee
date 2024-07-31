@@ -1,0 +1,33 @@
+ <div class="flex gap-8 items-center">
+      {# Left arrow #}
+      {% if posts.pagination.prev %}
+        <a href="{{ posts.pagination.prev.link }}">
+         {% include "icons/arrow.twig" %}
+        </a>
+       {% else %}
+          {% include "icons/arrow.twig" with {
+            classes: "stroke-eee-blue-green-rules-100",
+         } %}
+       {% endif %}  
+
+      {% for page in posts.pagination.pages  %}
+        {% if page.link %}
+          <a href="{{ page.link }}" class="py-2 px-1">{{ page.name }}</a>
+        {% else %}
+          <p class="bg-eee-lime-100 py-2 px-1 rounded-full">{{ page.name }}</p>
+        {% endif %}
+      {% endfor %}
+
+      {# Right arrow #}
+      {% if posts.pagination.next %}
+        <a href="{{ posts.pagination.next.link }}">
+          {% include "icons/arrow.twig" with {
+            classes: "rotate-180",
+          }%}
+        </a>
+       {% else %}
+           {% include "icons/arrow.twig" with {
+            classes: "rotate-180 stroke-eee-blue-green-rules-100",
+          }%}
+       {% endif %}  
+    </div>
