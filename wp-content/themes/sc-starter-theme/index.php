@@ -13,6 +13,4 @@ use Timber\Timber as TimberLibrary;
 
 $context = TimberLibrary::context();
 
-var_dump('hello');
-
 TimberLibrary::render( 'index.twig', $context );
