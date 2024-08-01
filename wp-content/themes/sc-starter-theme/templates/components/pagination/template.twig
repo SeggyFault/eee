@@ -1,7 +1,7 @@
  <div class="flex gap-8 items-center">
       {# Left arrow #}
-      {% if posts.pagination.prev %}
-        <a href="{{ posts.pagination.prev.link }}">
+      {% if pagination.prev %}
+        <a href="{{ pagination.prev.link }}">
           {% include "icons/arrow.twig" with {
               classes: "size-6",
             } 
@@ -13,18 +13,24 @@
             } 
           %}
        {% endif %}  
-
-      {% for page in posts.pagination.pages  %}
+  
+      {% for page in pagination.pages  %}
         {% if page.link %}
           <a href="{{ page.link }}" class="py-2 px-1">{{ page.name }}</a>
+        {% elseif page.class == "dots" %}
+        <div class="flex justify-between align-bottom gap-1">
+          <div class="bg-eee-blue-green-rules-100 rounded-full h-1 w-1"></div>
+          <div class="bg-eee-blue-green-rules-100 rounded-full h-1 w-1"></div>
+          <div class="bg-eee-blue-green-rules-100 rounded-full h-1 w-1"></div>
+        </div>
         {% else %}
           <p class="bg-eee-lime-100 py-2 px-1 rounded-full">{{ page.name }}</p>
         {% endif %}
       {% endfor %}
 
       {# Right arrow #}
-      {% if posts.pagination.next %}
-        <a href="{{ posts.pagination.next.link }}">
+      {% if pagination.next %}
+        <a href="{{ pagination.next.link }}">
           {% include "icons/arrow.twig" with {
             classes: "rotate-180 size-6",
             }
