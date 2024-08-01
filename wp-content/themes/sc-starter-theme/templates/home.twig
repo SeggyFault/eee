@@ -16,14 +16,16 @@
               <p>{{ post.date }}</p>
               <p><span class="text-eee-green-100">•</span> {{ get_reading_time() }}</p>
             </div>
-            <a href="{{ post.guid }}">
+            <a href="{{ function('get_permalink', post.ID) }}">
               <h3>{{ post.title }}</h3>
             </a>
           </div>
       </article>
     {% endfor %}
     <div class="flex justify-end py-14">
-      {% include 'pagination/template.twig' %}
+      {% include 'pagination/template.twig' with {
+        pagination: posts.pagination
+      } %}
     </div>
   </div>  
 {% endblock %}

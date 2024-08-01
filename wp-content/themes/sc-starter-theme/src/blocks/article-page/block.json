@@ -1,0 +1,16 @@
+{
+	"name": "acf/article-page",
+	"title": "Article page",
+	"description": "",
+	"category": "somoscuatro",
+	"icon": "",
+	"acf": {
+		"mode": "edit",
+		"renderCallback": "Somoscuatro\\Starter_Theme\\Blocks\\Article_Page\\Article_Page::render_callback"
+	},
+	"supports": {
+		"anchor": true,
+		"mode": false
+	},
+	"align": "full"
+}

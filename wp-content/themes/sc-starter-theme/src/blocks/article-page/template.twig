@@ -1,0 +1,26 @@
+<section class="container">
+
+  <div class="flex flex-col gap-4">
+    {# Back Button #}
+    {% include "button/template.twig" with {
+        href: "",
+        classes: "border  border-eee-neutral-900 rounded-full px-2.5 py-3",
+        title: "Назад"
+      }
+    %}
+    <h2>{{ heading }}</h2>
+    <div class="flex gap-5">
+      <span>{{ date }}</span>
+      <span>{{ reading_time }}</span>
+    </div>
+  </div>
+  {# Image #}
+  {% include "image/template.twig" with {
+        image: image,
+        width: 1137,
+        allowed_sizes: ['md', 'lg']
+    } 
+  %}
+  <p>{{ text }}</p>
+  
+</section>

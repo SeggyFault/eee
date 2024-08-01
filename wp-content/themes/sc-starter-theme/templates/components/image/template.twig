@@ -13,7 +13,7 @@
 				<source media="{{ source.media }}" srcset="{{ srcset }}"/>
 			{% endfor %}
 			{% set srcset = sources|last.srcset ~	(sources|last['srcset@2x'] ? ' 1x, ' ~ sources|last['srcset@2x'] ~ ' 2x') ~ (sources|last['srcset@3x'] ? ', ' ~ sources|last['srcset@3x'] ~ ' 3x' : '') %}
-			<img class="object-cover w-full h-auto min-h-full" srcset="{{ srcset }}" src="{{ sources|last.srcset }}" alt="{{ image.alt }}" width="{{ width ?: sources|last.width }}" height="{{ height ?: sources|last.height }}">
+			<img class="object-cover w-full h-auto min-h-full {{ image_classes }}" srcset="{{ srcset }}" src="{{ sources|last.srcset }}" alt="{{ image.alt }}" width="{{ width ?: sources|last.width }}" height="{{ height ?: sources|last.height }}">
 		</picture>
 	{% endif %}
 {% endif %}
