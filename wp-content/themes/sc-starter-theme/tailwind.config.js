@@ -32,5 +32,8 @@ module.exports = {
 		},
 	},
 	plugins: [],
-	safelist: [...tailwindBgColorsSafeList.colors],
+	safelist: [
+    'appearence-none',
+    ...tailwindBgColorsSafeList.colors
+  ],
 };

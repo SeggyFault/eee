@@ -164,6 +164,10 @@ class Timber {
 		);
 
     $twig->addFunction(
+			new TwigFunction( 'get_language_switcher', array( $this, 'get_language_switcher' ) )
+		);
+
+    $twig->addFunction(
 			new TwigFunction( 'get_reading_time', array( $this, 'get_reading_time' ) )
 		);
 
@@ -268,5 +272,18 @@ class Timber {
     $reading_time = ceil( $word_count / 200 );
 
     return sprintf( __('%d minutes', 'sc-starter-theme'), $reading_time );
+  }
+
+  /**
+   * Gets Language Switcher.
+   */
+  public function get_language_switcher() {
+    ob_start();
+    pll_the_languages(array('dropdown' => 1));
+    $languages = ob_get_clean();
+
+    $languages = preg_replace('@class="pll-switcher-select"@', 'class="appearence-none bg-transparent"', $languages);
+
+    return $languages;
   }
 }
