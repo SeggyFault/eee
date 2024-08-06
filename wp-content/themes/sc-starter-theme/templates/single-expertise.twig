@@ -1,0 +1,39 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+  <section class="container pt-10 pb-20">
+    <div class="flex flex-col gap-4 pb-10">
+      {# Back Button #}
+      {% include "button/template.twig" with {
+          url: '/expertise',
+          classes: "border border-eee-neutral-900 rounded-full px-2.5 py-3",
+          title: "Назад",
+          icon: true,
+        }
+      %}
+      <h2>{{ post.title }}</h2>
+      <div class="flex gap-1">
+        <p>{{ post.date }}</p>
+        <p><span class="text-eee-green-100">•</span> {{ get_reading_time() }}</p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2">
+      {# Image #}
+      <div class="w-[600px]">
+        {% include "image/template.twig" with {
+          image: function('acf_get_attachment', function('get_post_thumbnail_id', post.ID)),
+          width: 600,
+          allowed_sizes: ['md', 'lg']
+        } 
+      %}
+      </div>
+       <div class="flex">
+      <div class="border-l border-eee-blue-green-rules-100 max-w-prose">
+        <div class="flex flex-col gap-4">{{ post.content }}</div>
+      </div>
+    </div>
+    </div>
+    
+  </section>
+{% endblock %}
