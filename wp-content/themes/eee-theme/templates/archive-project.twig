@@ -9,10 +9,10 @@
         image: function('acf_get_attachment', function('get_post_thumbnail_id', project.ID)),
         width: 330,
         allowed_sizes: ['md', 'lg'],
-        image_classes: 'h-[267px] max-h-[267px] object-cover',
+        image_classes: '!h-[267px] !min-h-[267px] object-cover',
         } 
       %}
-      <h3 class="uppercase text-xl">{{ project.title }}</h3>
+      <h3 class="text-xl uppercase">{{ project.title }}</h3>
     </a>
     {% endfor %}
     </div>
