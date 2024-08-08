@@ -24,6 +24,7 @@ module.exports = {
 		extend: {
 			fontFamily: {
 				ebgaramond: ['EBGaramond', 'Times New Roman', 'serif'],
+        urbanist: ['Urbanist', 'Helvetica Neue', 'Arial', 'sans-serif'],
 			},
 			colors: tailwindColorPalette,
       backgroundImage: {

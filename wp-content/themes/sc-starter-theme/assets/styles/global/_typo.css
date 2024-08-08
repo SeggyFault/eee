@@ -28,11 +28,6 @@
 		@apply text-lg;
 	}
 
-	/* h6,
-	.h6 {
-		
-	} */
-
   main {
     ul {
       @apply list-disc font-ebgaramond text-lg pl-4;
@@ -43,8 +38,7 @@
 	  }
 
     strong {
-      @apply font-bold text-xl; 
-      /* change for CodecPro */
+      @apply font-urbanist font-bold text-xl; 
     }
   }
 }
