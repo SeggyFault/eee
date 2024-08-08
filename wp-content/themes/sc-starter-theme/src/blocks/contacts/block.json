@@ -1,0 +1,16 @@
+{
+	"name": "acf/contacts",
+	"title": "Contacts",
+	"description": "",
+	"category": "somoscuatro",
+	"icon": "",
+	"acf": {
+		"mode": "edit",
+		"renderCallback": "Somoscuatro\\Starter_Theme\\Blocks\\Contacts\\Contacts::render_callback"
+	},
+	"supports": {
+		"anchor": true,
+		"mode": false
+	},
+	"align": "full"
+}

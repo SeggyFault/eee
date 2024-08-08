@@ -1,0 +1,23 @@
+form {
+  @apply w-full;
+}
+
+input, textarea {
+  @apply border-b border-eee-blue-green-rules-100 w-full;
+}
+
+label {
+  @apply font-bold;
+}
+
+input[type="submit"] {
+  @apply w-fit border-none bg-eee-lime-100 rounded-full px-14 py-3;
+}
+
+p:has(input[type="submit"]) {
+  @apply flex justify-end;
+}
+
+.wpcf7-spinner {
+  @apply hidden;
+}

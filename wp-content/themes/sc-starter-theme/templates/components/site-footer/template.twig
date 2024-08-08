@@ -10,13 +10,19 @@
       <li>Follow us</li>
       {% if social_media.facebook %}
         <li>
-          <a href="{{ social_media.facebook }}" target="_blank">{% include 'icons/facebook.twig' %}</a>
+          <a href="{{ social_media.facebook }}" target="_blank">
+            <span class="fill-eee-neutral-100">
+              {% include 'icons/facebook.twig' %}
+            </span>
+          </a>
         </li>
       {% endif %}
 
       {% if social_media.linkedin %}
        <li>
-        <a href="{{ social_media.linkedin }}" target="_blank">{% include 'icons/linkedin.twig' %}</a>
+        <a href="{{ social_media.linkedin }}" target="_blank">
+          <span class="fill-eee-neutral-100">{% include 'icons/linkedin.twig' %}</span>
+        </a>
       </li>
       {% endif %}
     </ul>
