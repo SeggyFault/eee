@@ -1,0 +1,16 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+  <div class="container flex flex-col py-10 divide-y divide-eee-blue-green-rules-100 z-[99999]">
+    {% if posts %}
+      {% for post in posts %}
+        <a class="flex flex-col py-8" href="{{ function('get_permalink', post.ID) }}">
+          <p class="uppercase text-eee-thunderstorm-blue-100 text-sm font-semibold">{{ post.post_type }}</p>
+          <p class="text-xl">{{ post.title }}</p>
+        </a>
+      {% else %}
+        <p class="text-2xl h-[calc(100vh-26rem)]">No results found.</p>
+      {% endfor %}
+    {% endif %}
+  </div>
+{% endblock %}

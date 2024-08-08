@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html {{ site.language_attributes }} class="scroll-smooth">
+<html {{ site.language_attributes }} id="html-scroll" class="scroll-smooth relative">
 	<head>
 		{% block head %}
 			{% include 'head.twig' %}
@@ -19,5 +19,7 @@
 		{% block footer %}
 			{% include 'site-footer/template.twig' %}
 		{% endblock %}
+
+    {% include 'search-form/template.twig' %}
 	</body>
 </html>

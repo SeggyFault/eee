@@ -37,3 +37,19 @@ const changeSiteHeaderStyle = (isScrolled) => {
     setStyles('relative', '#FFF', '#000', false, '#CACACA', '#000');
   }
 };
+
+document.addEventListener('DOMContentLoaded', () => {
+  const search = document.getElementById("search-form");
+  const html = document.getElementById('html-scroll');
+  
+  document.getElementById('search-open').addEventListener("click", () => {
+    search.style.display = 'flex';
+    html.style.overflow = 'hidden';
+  })
+
+  document.getElementById('search-close').addEventListener("click", () => {
+    
+    search.style.display = 'none';
+    html.style.overflow = 'initial';
+  })
+});
