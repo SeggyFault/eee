@@ -1,6 +1,6 @@
 # Dist folders
-wp-content/themes/sc-starter-theme/dist
-wp-content/themes/sc-starter-theme/src/blocks/**/fields.json
+wp-content/themes/eee-theme/dist
+wp-content/themes/eee-theme/src/blocks/**/fields.json
 
 # WordPress
 /wp-config.php
@@ -44,7 +44,7 @@ wp-content/themes/sc-starter-theme/src/blocks/**/fields.json
 
 # Dependencies
 /vendor
-/wp-content/themes/sc-starter-theme/vendor
+/wp-content/themes/eee-theme/vendor
 node_modules/
 
 # SQL dumps

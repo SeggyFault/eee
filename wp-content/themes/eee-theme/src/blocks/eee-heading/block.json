@@ -1,0 +1,16 @@
+{
+	"name": "acf/eee-heading",
+	"title": "EEE Heading",
+	"description": "",
+	"category": "eee",
+	"icon": "",
+	"acf": {
+		"mode": "edit",
+		"renderCallback": "EEE\\Theme\\Blocks\\EEE_Heading\\EEE_Heading::render_callback"
+	},
+	"supports": {
+		"anchor": true,
+		"mode": false
+	},
+	"align": "full"
+}

@@ -1,0 +1,16 @@
+{
+	"name": "acf/icon-text",
+	"title": "Icon Text",
+	"description": "",
+	"category": "eee",
+	"icon": "",
+	"acf": {
+		"mode": "edit",
+		"renderCallback": "EEE\\Theme\\Blocks\\Icon_Text\\Icon_Text::render_callback"
+	},
+	"supports": {
+		"anchor": true,
+		"mode": false
+	},
+	"align": "full"
+}

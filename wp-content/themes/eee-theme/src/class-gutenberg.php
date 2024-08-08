@@ -1,0 +1,76 @@
+<?php
+/**
+ * Contains EEE\Theme\Gutenberg Class.
+ *
+ * @package eee-theme
+ */
+
+declare(strict_types=1);
+
+namespace EEE\Theme;
+
+use EEE\Theme\Attributes\Action;
+use EEE\Theme\Attributes\Filter;
+
+use WP_Block_Editor_Context;
+
+/**
+ * Gutenberg Customization.
+ */
+class Gutenberg {
+
+	/**
+	 * Registers Gutenberg Custom Category.
+	 *
+	 * @param array[]                 $block_categories     Array of Categories for Block Types.
+	 * @param WP_Block_Editor_Context $block_editor_context The Current Block Editor Context.
+	 */
+	#[Filter( 'block_categories_all', accepted_args: 2 )]
+	public function add_custom_block_category( array $block_categories, WP_Block_Editor_Context $block_editor_context ): array {
+		if ( ! ( $block_editor_context instanceof WP_Block_Editor_Context ) ) {
+			return $block_categories;
+		}
+
+		return array_merge(
+			$block_categories,
+			array(
+				array(
+					'slug'  => 'eee',
+					'title' => esc_html__( 'Ertle Custom Blocks', 'eee-theme' ),
+				),
+			)
+		);
+	}
+
+	/**
+	 * Removes Unwanted Default WordPress Gutenberg Block Types.
+	 *
+	 * @return array The Modified Allowed Block Types.
+	 */
+	#[Filter( 'allowed_block_types_all', accepted_args: 0 )]
+	public function allowed_block_types(): array {
+		$block_types = \WP_Block_Type_Registry::get_instance()->get_all_registered();
+
+		// To disable the default WordPress Gutenberg blocks, include their names in
+		// the array below.
+		$blocks_to_remove = array(
+			// phpcs:ignore Squiz.PHP.CommentedOutCode.Found
+			// 'core/archives' => null,
+		);
+
+		return array_keys( array_diff_key( $block_types, $blocks_to_remove ) );
+	}
+
+	/**
+	 * Removes Default Gutenberg Blocks Assets.
+	 *
+	 * Because we are using Tailwind CSS to style blocks (including default
+	 * WordPress blocks), we need to remove the default WordPress assets for
+	 * blocks.
+	 */
+	#[Action( 'wp_enqueue_scripts' )]
+	public function remove_default_blocks_assets(): void {
+		wp_dequeue_style( 'wp-block-library' );
+		wp_dequeue_script( 'wp-block-library' );
+	}
+}

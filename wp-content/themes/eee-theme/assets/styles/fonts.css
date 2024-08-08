@@ -1,0 +1,19 @@
+@supports (font-variation-settings: normal) {
+	@font-face {
+		font-family: EBGaramond;
+		font-style: normal;
+		font-weight: 400;
+		font-display: swap;
+		src: url(/wp-content/themes/eee-theme/dist/fonts/ebgaramond.woff2)
+			format("woff2");
+	}
+
+@font-face {
+		font-family: Urbanist;
+		font-style: normal;
+		font-weight: 400 600 700 800;
+		font-display: swap;
+		src: url(/wp-content/themes/eee-theme/dist/fonts/urbanist.woff2)
+			format("woff2");
+	}
+}

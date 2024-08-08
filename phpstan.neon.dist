@@ -9,7 +9,7 @@ parameters:
 		- %rootDir%/../../php-stubs/acf-pro-stubs/acf-pro-stubs.php
 		- %rootDir%/../../php-stubs/timber-stubs/timber-stubs.php
 	paths:
-		- wp-content/themes/sc-starter-theme
+		- wp-content/themes/eee-theme
 	excludePaths:
 		- */vendor/*
 		- */node_modules/*

@@ -1,0 +1,16 @@
+{
+	"name": "acf/certifications",
+	"title": "Certifications",
+	"description": "",
+	"category": "eee",
+	"icon": "",
+	"acf": {
+		"mode": "edit",
+		"renderCallback": "EEE\\Theme\\Blocks\\Certifications\\Certifications::render_callback"
+	},
+	"supports": {
+		"anchor": true,
+		"mode": false
+	},
+	"align": "full"
+}

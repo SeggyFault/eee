@@ -1,0 +1,16 @@
+{
+	"name": "acf/description",
+	"title": "Description",
+	"description": "",
+	"category": "eee",
+	"icon": "",
+	"acf": {
+		"mode": "edit",
+		"renderCallback": "EEE\\Theme\\Blocks\\Description\\Description::render_callback"
+	},
+	"supports": {
+		"anchor": true,
+		"mode": false
+	},
+	"align": "full"
+}

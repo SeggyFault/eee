@@ -1,12 +1,12 @@
 {
-	"name": "somoscuatro/eee-wesite",
-	"description": "",
-	"version": "0.1.0",
+	"name": "eee/eee-website",
+	"description": "Ertle WordPress website.",
+	"version": "1.0.0",
 	"authors": [
 		{
-			"name": "somoscuatro",
-			"homepage": "https://somoscuatro.com",
-			"email": "tech@somoscuatro.es"
+			"name": "Alex",
+			"homepage": "https://github.com/SeggyFault",
+			"email": "sgflt88@gmail.com"
 		}
 	],
 	"minimum-stability": "dev",
@@ -26,13 +26,13 @@
 		"timber/timber": "^2.2"
 	},
 	"scripts": {
-		"lint": "vendor/bin/phpcs --standard=phpcs.xml wp-content/themes/sc-starter-theme",
-		"lint:fix": "vendor/bin/phpcbf --standard=phpcs.xml wp-content/themes/sc-starter-theme",
+		"lint": "vendor/bin/phpcs --standard=phpcs.xml wp-content/themes/eee-theme",
+		"lint:fix": "vendor/bin/phpcbf --standard=phpcs.xml wp-content/themes/eee-theme",
 		"sniff": "vendor/bin/phpstan analyse --memory-limit 1G",
 		"post-install-cmd": [
 			"patch -N ./vendor/php-stubs/wp-cli-stubs/wp-cli-stubs.php < ./patches/wp-cli-stubs-php82.patch || true",
 			"patch -N ./vendor/php-stubs/wp-cli-stubs/wp-cli-commands-stubs.php < ./patches/wp-cli-commands-stubs-php82.patch || true",
-			"vendor/bin/generate-stubs wp-content/themes/sc-starter-theme/vendor/timber --out=vendor/php-stubs/timber-stubs/timber-stubs.php --force"
+			"vendor/bin/generate-stubs wp-content/themes/eee-theme/vendor/timber --out=vendor/php-stubs/timber-stubs/timber-stubs.php --force"
 		]
 	},
 	"config": {

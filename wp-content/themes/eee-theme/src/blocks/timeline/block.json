@@ -1,0 +1,16 @@
+{
+	"name": "acf/timeline",
+	"title": "Timeline",
+	"description": "",
+	"category": "eee",
+	"icon": "",
+	"acf": {
+		"mode": "edit",
+		"renderCallback": "EEE\\Theme\\Blocks\\Timeline\\Timeline::render_callback"
+	},
+	"supports": {
+		"anchor": true,
+		"mode": false
+	},
+	"align": "full"
+}

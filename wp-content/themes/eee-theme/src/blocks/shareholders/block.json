@@ -1,0 +1,16 @@
+{
+	"name": "acf/shareholders",
+	"title": "Shareholders",
+	"description": "",
+	"category": "eee",
+	"icon": "",
+	"acf": {
+		"mode": "edit",
+		"renderCallback": "EEE\\Theme\\Blocks\\Shareholders\\Shareholders::render_callback"
+	},
+	"supports": {
+		"anchor": true,
+		"mode": false
+	},
+	"align": "full"
+}
