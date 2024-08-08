@@ -33,13 +33,13 @@ class Image_Text extends Block {
 			'key'      => 'group_' . static::$acf_block_prefix,
 			'title'    => __( 'Block: Image and Text', 'eee-theme' ),
 			'fields'   => array(
-        array(
+				array(
 					'key'   => 'field_' . self::$acf_block_prefix . '_image',
 					'label' => __( 'Image', 'eee-theme' ),
 					'name'  => self::$acf_block_prefix . '_image',
 					'type'  => 'image',
 				),
-        array(
+				array(
 					'key'           => 'field_' . static::$acf_block_prefix . '_text',
 					'label'         => __( 'Text', 'eee-theme' ),
 					'name'          => static::$acf_block_prefix . '_text',
@@ -47,7 +47,7 @@ class Image_Text extends Block {
 					'required'      => 1,
 					'return_format' => 'string',
 				),
-        array(
+				array(
 					'key'           => 'field_' . static::$acf_block_prefix . '_heading',
 					'label'         => __( 'Heading', 'eee-theme' ),
 					'name'          => static::$acf_block_prefix . '_heading',
@@ -55,7 +55,7 @@ class Image_Text extends Block {
 					'required'      => 1,
 					'return_format' => 'string',
 				),
-        array(
+				array(
 					'key'           => 'field_' . static::$acf_block_prefix . '_subtext',
 					'label'         => __( 'Subtext', 'eee-theme' ),
 					'name'          => static::$acf_block_prefix . '_subtext',

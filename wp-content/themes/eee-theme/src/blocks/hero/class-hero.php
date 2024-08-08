@@ -34,17 +34,17 @@ class Hero extends Block {
 			'title'    => __( 'Block: Hero', 'eee-theme' ),
 			'fields'   => array(
 				array(
-			    'key' => 'field_' . static::$acf_block_prefix . '_heading',
-			    'label' => 'Heading',
-			    'name' => static::$acf_block_prefix . '_heading',
-			    'type' => 'textarea',
-		    ),
-        array(
-          'key' => 'field_' . static::$acf_block_prefix . '_subheading',
-          'label' => 'Subheading',
-          'name' => static::$acf_block_prefix . '_subheading',
-          'type' => 'textarea'
-        ),
+					'key'   => 'field_' . static::$acf_block_prefix . '_heading',
+					'label' => 'Heading',
+					'name'  => static::$acf_block_prefix . '_heading',
+					'type'  => 'textarea',
+				),
+				array(
+					'key'   => 'field_' . static::$acf_block_prefix . '_subheading',
+					'label' => 'Subheading',
+					'name'  => static::$acf_block_prefix . '_subheading',
+					'type'  => 'textarea',
+				),
 			),
 			'location' => array(
 				array(
@@ -58,4 +58,3 @@ class Hero extends Block {
 		);
 	}
 }
-

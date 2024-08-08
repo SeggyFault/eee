@@ -33,18 +33,18 @@ class Description extends Block {
 			'key'      => 'group_' . static::$acf_block_prefix,
 			'title'    => __( 'Block: Description', 'eee-theme' ),
 			'fields'   => array(
-        array(
-			    'key' => 'field_' . static::$acf_block_prefix . '_heading',
-			    'label' => 'Heading',
-			    'name' => static::$acf_block_prefix . '_heading',
-			    'type' => 'text',
-		    ),
-        array(
-          'key' => 'field_' . static::$acf_block_prefix . '_text',
-          'label' => 'Text',
-          'name' => static::$acf_block_prefix . '_text',
-          'type' => 'textarea'
-        ),
+				array(
+					'key'   => 'field_' . static::$acf_block_prefix . '_heading',
+					'label' => 'Heading',
+					'name'  => static::$acf_block_prefix . '_heading',
+					'type'  => 'text',
+				),
+				array(
+					'key'   => 'field_' . static::$acf_block_prefix . '_text',
+					'label' => 'Text',
+					'name'  => static::$acf_block_prefix . '_text',
+					'type'  => 'textarea',
+				),
 			),
 			'location' => array(
 				array(

@@ -5,6 +5,9 @@
 		"source.fixAll.stylelint": "explicit"
 	},
 	"eslint.validate": ["javascript"],
+  "[php]": {
+		"editor.formatOnSave": true
+	},
 	"[javascript]": {
 		"editor.formatOnSave": false
 	},

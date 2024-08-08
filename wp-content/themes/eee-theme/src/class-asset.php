@@ -41,7 +41,7 @@ class Asset {
 		// Theme Styles.
 		wp_enqueue_style( $theme_prefix . '-main-styles', $this->get_base_url() . '/dist/styles/main.css', array( $theme_prefix . '-fonts-preload' ), $this->get_filemtime( 'styles/main.css' ) );
 
-    // Contact Form Styles.
+		// Contact Form Styles.
 		wp_enqueue_style( $theme_prefix . '-contact-form-styles', $this->get_base_url() . '/dist/styles/contact-form.css', array(), $this->get_filemtime( 'styles/contact-form.css' ) );
 
 		// Theme Script.

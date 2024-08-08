@@ -11,7 +11,7 @@ namespace EEE\Theme;
 
 use Timber\Timber as TimberLibrary;
 
-$context = TimberLibrary::context();
+$context          = TimberLibrary::context();
 $context['posts'] = TimberLibrary::get_posts();
 
 TimberLibrary::render( 'home.twig', $context );

@@ -43,11 +43,11 @@ class Contacts extends Block {
 					'return_format' => 'string',
 				),
 				// array(
-				// 	'key'           => 'field_' . static::$acf_block_prefix . '_map',
-				// 	'label'         => __( 'Map', 'eee-theme' ),
-				// 	'name'          => static::$acf_block_prefix . '_map',
-				// 	'type'          => 'google_map',
-				// 	'required'      => 1,
+				// 'key'           => 'field_' . static::$acf_block_prefix . '_map',
+				// 'label'         => __( 'Map', 'eee-theme' ),
+				// 'name'          => static::$acf_block_prefix . '_map',
+				// 'type'          => 'google_map',
+				// 'required'      => 1,
 				// ),
 			),
 			'location' => array(
@@ -62,16 +62,27 @@ class Contacts extends Block {
 		);
 	}
 
-  public function set_custom_context( array $context, array $block ): array {
-    $global_context = TimberLibrary::context();
-    $context = array_merge_recursive( 
-      $context, 
-      array( 
-        'contacts' => $global_context['contacts'],
-        'social_media' => $global_context['social_media']
-      ),
-    );
-    
+	/**
+	 * Sets the Custom Context for the Block.
+	 *
+	 * This method can be overridden in a particular block to modify the default
+	 * Timber context.
+	 *
+	 * @param array $context The Timber Context.
+	 * @param array $block The Gutenberg block.
+	 *
+	 * @return array The Modified Timber Context.
+	 */
+	public function set_custom_context( array $context, array $block ): array {
+		$global_context = TimberLibrary::context();
+		$context        = array_merge_recursive(
+			$context,
+			array(
+				'contacts'     => $global_context['contacts'],
+				'social_media' => $global_context['social_media'],
+			),
+		);
+
 		return $context;
 	}
 }

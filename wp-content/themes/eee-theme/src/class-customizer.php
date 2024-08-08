@@ -54,10 +54,14 @@ class Customizer {
 		);
 	}
 
-  // Contacts
-  #[Action( 'customize_register' )]
-  public function add_customizer_contacts_controls( \WP_Customize_Manager $wp_customize ): void {
-    // Section.
+	/**
+	 * Adds Contacts Controls to the Customizer.
+	 *
+	 * @param \WP_Customize_Manager $wp_customize WP_customize_manager Instance.
+	 */
+	#[Action( 'customize_register' )]
+	public function add_customizer_contacts_controls( \WP_Customize_Manager $wp_customize ): void {
+		// Section.
 		$wp_customize->add_section(
 			'contacts',
 			array(
@@ -67,12 +71,12 @@ class Customizer {
 			)
 		);
 
-    // Email 
-      $wp_customize->add_setting(
+		// Email.
+		$wp_customize->add_setting(
 			'contact_email',
 			array(
 				'default'    => '',
-				'type'       => 'theme_mod',  
+				'type'       => 'theme_mod',
 				'capability' => 'edit_theme_options',
 			)
 		);
@@ -89,12 +93,12 @@ class Customizer {
 			),
 		);
 
-    // Phone
-    $wp_customize->add_setting(
+		// Phone.
+		$wp_customize->add_setting(
 			'contact_phone',
 			array(
 				'default'    => '',
-				'type'       => 'theme_mod',  
+				'type'       => 'theme_mod',
 				'capability' => 'edit_theme_options',
 			)
 		);
@@ -111,12 +115,12 @@ class Customizer {
 			),
 		);
 
-    // Address
-    $wp_customize->add_setting(
+		// Address.
+		$wp_customize->add_setting(
 			'contact_address',
 			array(
 				'default'    => '',
-				'type'       => 'theme_mod',  
+				'type'       => 'theme_mod',
 				'capability' => 'edit_theme_options',
 			)
 		);
@@ -132,12 +136,16 @@ class Customizer {
 				),
 			),
 		);
-  }
+	}
 
-  // Social Media
-  #[Action( 'customize_register' )]
-  public function add_customizer_social_media_controls( \WP_Customize_Manager $wp_customize ): void {
-    // Section.
+	/**
+	 * Adds Social Media Controls to the Customizer.
+	 *
+	 * @param \WP_Customize_Manager $wp_customize WP_customize_manager Instance.
+	 */
+	#[Action( 'customize_register' )]
+	public function add_customizer_social_media_controls( \WP_Customize_Manager $wp_customize ): void {
+		// Section.
 		$wp_customize->add_section(
 			'social_media',
 			array(
@@ -147,12 +155,12 @@ class Customizer {
 			)
 		);
 
-     // Facebook
-      $wp_customize->add_setting(
+		// Facebook.
+		$wp_customize->add_setting(
 			'facebook_link',
 			array(
 				'default'    => '',
-				'type'       => 'theme_mod',  
+				'type'       => 'theme_mod',
 				'capability' => 'edit_theme_options',
 			)
 		);
@@ -169,12 +177,12 @@ class Customizer {
 			),
 		);
 
-    // LinkedIn
-      $wp_customize->add_setting(
+		// LinkedIn.
+		$wp_customize->add_setting(
 			'linkedin_link',
 			array(
 				'default'    => '',
-				'type'       => 'theme_mod',  
+				'type'       => 'theme_mod',
 				'capability' => 'edit_theme_options',
 			)
 		);
@@ -190,5 +198,5 @@ class Customizer {
 				),
 			),
 		);
-  }
+	}
 }

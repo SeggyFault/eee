@@ -11,12 +11,12 @@ namespace EEE\Theme;
 
 use Timber\Timber as TimberLibrary;
 
-$context = TimberLibrary::context();
+$context               = TimberLibrary::context();
 $context['expertises'] = TimberLibrary::get_posts(
-  array(
-    'post_type' => 'expertise',
-    'posts_per_page' => -1
-  )
+	array(
+		'post_type'      => 'expertise',
+		'posts_per_page' => -1,
+	)
 );
 
 TimberLibrary::render( 'archive-expertise.twig', $context );

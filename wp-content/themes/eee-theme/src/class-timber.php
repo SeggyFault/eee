@@ -53,20 +53,20 @@ class Timber {
 		$context['homepage_url'] = get_home_url();
 
 		$context = $this->get_menus( $context );
-    
-    $context['logo_white'] = esc_url( get_stylesheet_directory_uri() ) . '/assets/images/logo-white.svg';
-    $context['logo_black'] = esc_url( get_stylesheet_directory_uri() ) . '/assets/images/logo-black.svg';
 
-    $context['contacts'] = array(
-      'email' => get_theme_mod('contact_email'),
-      'phone' => get_theme_mod('contact_phone'),
-      'address' => get_theme_mod('contact_address'),
-    );
+		$context['logo_white'] = esc_url( get_stylesheet_directory_uri() ) . '/assets/images/logo-white.svg';
+		$context['logo_black'] = esc_url( get_stylesheet_directory_uri() ) . '/assets/images/logo-black.svg';
 
-    $context['social_media'] = array(
-      'facebook' => get_theme_mod('facebook_link'),
-      'linkedin' => get_theme_mod('linkedin_link'),
-    );
+		$context['contacts'] = array(
+			'email'   => get_theme_mod( 'contact_email' ),
+			'phone'   => get_theme_mod( 'contact_phone' ),
+			'address' => get_theme_mod( 'contact_address' ),
+		);
+
+		$context['social_media'] = array(
+			'facebook' => get_theme_mod( 'facebook_link' ),
+			'linkedin' => get_theme_mod( 'linkedin_link' ),
+		);
 
 		$context['wp_footer_exists'] = function_exists( 'wp_footer' );
 
@@ -151,7 +151,7 @@ class Timber {
 			new TwigFunction( 'enqueue_script', array( $this, 'enqueue_script' ) )
 		);
 
-    $twig->addFunction(
+		$twig->addFunction(
 			new TwigFunction( 'enqueue_style', array( $this, 'enqueue_style' ) )
 		);
 
@@ -163,11 +163,11 @@ class Timber {
 			new TwigFunction( 'get_image_srcset', array( $this, 'get_image_srcset' ) )
 		);
 
-    $twig->addFunction(
+		$twig->addFunction(
 			new TwigFunction( 'get_language_switcher', array( $this, 'get_language_switcher' ) )
 		);
 
-    $twig->addFunction(
+		$twig->addFunction(
 			new TwigFunction( 'get_reading_time', array( $this, 'get_reading_time' ) )
 		);
 
@@ -205,7 +205,7 @@ class Timber {
 		wp_enqueue_script( $handle );
 	}
 
-  /**
+	/**
 	 * Enqueue Block Styles.
 	 *
 	 * @param string $handle The Style Handle.
@@ -260,30 +260,31 @@ class Timber {
 		return $srcset;
 	}
 
-  /**
-   * Gets the post reading time.
-   * 
-   * @return string The post reading time.
-   */
-  public function get_reading_time(): string {
-    $post_content = get_post_field( 'post_content', get_the_ID() );
+	/**
+	 * Gets the post reading time.
+	 *
+	 * @return string The post reading time.
+	 */
+	public function get_reading_time(): string {
+		$post_content = get_post_field( 'post_content', get_the_ID() );
 
-    $word_count = str_word_count( wp_strip_all_tags( $post_content ));
-    $reading_time = ceil( $word_count / 200 );
+		$word_count   = str_word_count( wp_strip_all_tags( $post_content ) );
+		$reading_time = ceil( $word_count / 200 );
 
-    return sprintf( __('%d minutes', 'eee-theme'), $reading_time );
-  }
+		// translators: "%d = reading time minutes".
+		return sprintf( __( '%d minutes', 'eee-theme' ), $reading_time );
+	}
 
-  /**
-   * Gets Language Switcher.
-   */
-  public function get_language_switcher() {
-    ob_start();
-    pll_the_languages(array('dropdown' => 1));
-    $languages = ob_get_clean();
+	/**
+	 * Gets Language Switcher.
+	 */
+	public function get_language_switcher() {
+		ob_start();
+		pll_the_languages( array( 'dropdown' => 1 ) );
+		$languages = ob_get_clean();
 
-    $languages = preg_replace('@class="pll-switcher-select"@', 'class="appearence-none bg-transparent"', $languages);
+		$languages = preg_replace( '@class="pll-switcher-select"@', 'class="bg-transparent appearence-none"', $languages );
 
-    return $languages;
-  }
+		return $languages;
+	}
 }

@@ -139,13 +139,13 @@ class Block implements Block_Interface {
 	public function set_context( array $context, array $block, bool $is_preview ): array {
 		unset( $block['data'] );
 		$context['block'] = $block;
-    
+
 		$fields = get_fields();
 
 		if ( $fields ) {
-      $context = $this->add_acf_fields_to_context( static::$acf_block_prefix, $context, $fields );
+			$context = $this->add_acf_fields_to_context( static::$acf_block_prefix, $context, $fields );
 		}
-    
+
 		$context['is_preview'] = $is_preview;
 
 		return $this->set_custom_context( $context, $block );

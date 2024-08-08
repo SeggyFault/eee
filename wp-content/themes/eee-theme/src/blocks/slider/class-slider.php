@@ -17,7 +17,7 @@ use EEE\Theme\Helpers\Filesystem;
  */
 class Slider extends Block {
 
-  use Filesystem;
+	use Filesystem;
 
 	/**
 	 * The Prefix Used for ACF Blocks.
@@ -37,41 +37,41 @@ class Slider extends Block {
 			'title'    => __( 'Block: Slider', 'eee-theme' ),
 			'fields'   => array(
 				array(
-          'key'           => 'field_' . static::$acf_block_prefix . '_heading',
-          'label'         => __( 'Heading', 'eee-theme' ),
-          'name'          => static::$acf_block_prefix . '_heading',
-          'type'          => 'text',
-          'required'      => 1,
-          'return_format' => 'string',
-        ),
+					'key'           => 'field_' . static::$acf_block_prefix . '_heading',
+					'label'         => __( 'Heading', 'eee-theme' ),
+					'name'          => static::$acf_block_prefix . '_heading',
+					'type'          => 'text',
+					'required'      => 1,
+					'return_format' => 'string',
+				),
 				array(
-          'key'           => 'field_' . static::$acf_block_prefix . '_slides',
-          'label'         => __( 'Slides', 'eee-theme' ),
-          'name'          => static::$acf_block_prefix . '_slides',
-          'type'          => 'repeater',
-          'layout' => 'row',
-          'sub_fields'   => array(
-            array(
-              'key'           => 'field_' . static::$acf_block_prefix . '_logo',
-              'label'         => __( 'Logo', 'eee-theme' ),
-              'name'          => static::$acf_block_prefix . '_logo',
-              'type'          => 'image',
-              'required'      => 1,
-              'parent_repeater' => 'field_' . static::$acf_block_prefix . '_slides',
-            ),
-            array(
-              'key'           => 'field_' . static::$acf_block_prefix . '_bg_image',
-              'label'         => __( 'Background image', 'eee-theme' ),
-              'name'          => static::$acf_block_prefix . '_bg_image',
-              'type'          => 'image',
-              'instructions'  => __( 'The minimum size of the image must be 2400x1200', 'eee-theme' ),
-              'min_width' => 2400,
-			        'min_height' => 1200,
-              'required'      => 1,
-              'parent_repeater' => 'field_' . static::$acf_block_prefix . '_slides',
-            ),
-          )
-        ),
+					'key'        => 'field_' . static::$acf_block_prefix . '_slides',
+					'label'      => __( 'Slides', 'eee-theme' ),
+					'name'       => static::$acf_block_prefix . '_slides',
+					'type'       => 'repeater',
+					'layout'     => 'row',
+					'sub_fields' => array(
+						array(
+							'key'             => 'field_' . static::$acf_block_prefix . '_logo',
+							'label'           => __( 'Logo', 'eee-theme' ),
+							'name'            => static::$acf_block_prefix . '_logo',
+							'type'            => 'image',
+							'required'        => 1,
+							'parent_repeater' => 'field_' . static::$acf_block_prefix . '_slides',
+						),
+						array(
+							'key'             => 'field_' . static::$acf_block_prefix . '_bg_image',
+							'label'           => __( 'Background image', 'eee-theme' ),
+							'name'            => static::$acf_block_prefix . '_bg_image',
+							'type'            => 'image',
+							'instructions'    => __( 'The minimum size of the image must be 2400x1200', 'eee-theme' ),
+							'min_width'       => 2400,
+							'min_height'      => 1200,
+							'required'        => 1,
+							'parent_repeater' => 'field_' . static::$acf_block_prefix . '_slides',
+						),
+					),
+				),
 			),
 			'location' => array(
 				array(
@@ -85,13 +85,13 @@ class Slider extends Block {
 		);
 	}
 
-  /**
+	/**
 	 * Registers Block Assets.
 	 */
 	public function register_assets(): void {
-    wp_register_script( 'glide-js', 'https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.2/dist/glide.min.js', array(), '3.6.2');
-    wp_register_style( 'glide-css', 'https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.2/dist/css/glide.core.min.css', array(), '3.6.2' );
+		wp_register_script( 'glide-js', 'https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.2/dist/glide.min.js', array(), '3.6.2', array( 'footer' => true ) );
+		wp_register_style( 'glide-css', 'https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.2/dist/css/glide.core.min.css', array(), '3.6.2' );
 
-    wp_register_script( 'slider-js', $this->get_base_url() . '/dist/scripts/slider.js', array(), $this->get_filemtime( 'scripts/slider.js' ), true );
-  }
+		wp_register_script( 'slider-js', $this->get_base_url() . '/dist/scripts/slider.js', array(), $this->get_filemtime( 'scripts/slider.js' ), true );
+	}
 }
