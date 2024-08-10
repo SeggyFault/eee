@@ -1,5 +1,6 @@
 import * as tailwindColorPalette from './tailwind.colors.json';
 import * as tailwindBgColorsSafeList from './tailwind.bg-colors-safelist.json';
+import * as safelistClasses from './tailwind.safelist-classes.json'
 
 module.exports = {
 	content: [
@@ -29,12 +30,14 @@ module.exports = {
 			colors: tailwindColorPalette,
       backgroundImage: {
         'hero-image': "url('/wp-content/themes/eee-theme/assets/images/hero-image.png')",
+        'projects-hero-image': "url('/wp-content/themes/eee-theme/assets/images/projects-hero-image.png')",
       }
 		},
 	},
 	plugins: [],
 	safelist: [
     'appearence-none',
-    ...tailwindBgColorsSafeList.colors
+    ...tailwindBgColorsSafeList.colors,
+    ...safelistClasses.bgImages
   ],
 };
