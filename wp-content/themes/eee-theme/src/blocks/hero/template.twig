@@ -1,6 +1,5 @@
-  <section id="hero-block" class="bg-eee-thunderstorm-blue-100/75 bg-hero-image">
-    <div class="section-container container pt-36 pb-28 flex flex-col gap-3">
-      <h1 class="text-8xl text-white leading-[100px]">{{ heading }}<span class="text-eee-lime-100">_</span></h1>
-      <p class="text-3xl text-white">{{ subheading }}</p>
-    </div>
-  </section>
+  {% include 'hero/template.twig' with {
+    heading: heading,
+    subheading: subheading,
+    bg_image: 'bg-hero-image'
+  }%}
