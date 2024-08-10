@@ -1,6 +1,11 @@
 {% extends 'base.twig' %}
 
 {% block content %}
+
+  {% include 'hero/template.twig' with {
+    heading: __('Проекти'),
+    bg_image: 'bg-projects-hero-image'
+  }%}
   <section class="container py-10">
     <div class="grid grid-cols-3 gap-16">
       {% for project in projects %}

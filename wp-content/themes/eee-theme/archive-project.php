@@ -10,7 +10,6 @@ declare(strict_types=1);
 namespace EEE\Theme;
 
 use Timber\Timber as TimberLibrary;
-
 $context             = TimberLibrary::context();
 $context['projects'] = TimberLibrary::get_posts(
 	array(
