@@ -1,6 +1,5 @@
 import * as tailwindColorPalette from './tailwind.colors.json';
 import * as tailwindBgColorsSafeList from './tailwind.bg-colors-safelist.json';
-import * as safelistClasses from './tailwind.safelist-classes.json'
 
 module.exports = {
 	content: [
@@ -38,6 +37,5 @@ module.exports = {
 	safelist: [
     'appearence-none',
     ...tailwindBgColorsSafeList.colors,
-    ...safelistClasses.bgImages
   ],
 };

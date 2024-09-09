@@ -1,0 +1,10 @@
+<section class="relative h-[520px] overflow-hidden">
+  <img src="{{ image_url }}" alt="{{ heading }}" class="absolute inset-0 object-cover w-full h-full">
+  <div class="absolute inset-0 bg-eee-thunderstorm-blue-100/75"></div>
+  <div class="container relative z-10 flex flex-col gap-3 section-container pt-36 pb-28">
+    <h1 class="text-8xl text-white leading-[100px]">{{ heading }}<span class="text-eee-lime-100">_</span></h1>
+    {% if subheading %}
+      <p class="text-3xl text-white">{{ subheading }}</p>
+    {% endif %}
+  </div>
+</section>

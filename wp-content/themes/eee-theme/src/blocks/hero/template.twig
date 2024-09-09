@@ -1,5 +1,8 @@
-  {% include 'hero/template.twig' with {
-    heading: heading,
-    subheading: subheading,
-    bg_image: 'bg-hero-image'
-  }%}
+<section id="hero-block" class="bg-hero-image h-[520px] bg-cover bg-no-repeat bg-eee-thunderstorm-blue-100/75 ">
+  <div class="container flex flex-col gap-3 section-container pt-36 pb-28">
+    <h1 class="text-8xl text-white leading-[100px]">{{ heading }}<span class="text-eee-lime-100">_</span></h1>
+    {% if subheading %}
+      <p class="text-3xl text-white">{{ subheading }}</p>
+    {% endif %}
+  </div>
+</section>

@@ -1,11 +1,11 @@
 {% extends 'base.twig' %}
 
 {% block content %}
-
-  {% include 'hero/template.twig' with {
+  {% set bgImageUrl = function('acf_get_attachment', 259).url %}
+  {% include 'components/project-hero/template.twig' with {
     heading: __('Проекти'),
-    bg_image: 'bg-projects-hero-image'
-  }%}
+    image_url: bgImageUrl,
+  } %}
   <section class="container py-10">
     <div class="grid grid-cols-3 gap-16">
       {% for project in projects %}

@@ -171,10 +171,6 @@ class Timber {
 			new TwigFunction( 'get_reading_time', array( $this, 'get_reading_time' ) )
 		);
 
-		$twig->addFunction(
-			new TwigFunction( 'bg_safelist_generator', array( $this, 'bg_safelist_generator' ) )
-		);
-
 		return $twig;
 	}
 
@@ -290,18 +286,5 @@ class Timber {
 		$languages = preg_replace( '@class="pll-switcher-select"@', 'class="bg-transparent appearence-none"', $languages );
 
 		return $languages;
-	}
-
-	public function bg_safelist_generator( $image_url ) {
-		$content = array(
-			'bgImages' => array(
-				"bg-[url('" . $image_url . "')]",
-			),
-		);
-
-		file_put_contents(
-			'wp-content/themes/eee-theme/tailwind.safelist-classes.json',
-			wp_json_encode( $content, JSON_UNESCAPED_SLASHES )
-		);
 	}
 }

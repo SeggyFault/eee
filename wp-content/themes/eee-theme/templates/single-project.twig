@@ -2,11 +2,10 @@
 
 {% block content %}
   {% set bgImageUrl = function('acf_get_attachment', function('get_post_thumbnail_id', post.ID)).url %}
-  {% set safeBgImage = bg_safelist_generator(bgImageUrl) %}
-  {% include 'hero/template.twig' with {
+  {% include 'components/project-hero/template.twig' with {
     heading: post.title,
+    image_url: bgImageUrl,
     subheading: function('get_field', 'project_subheading_field', post.ID),
-    bg_image: "bg-[url('" ~ bgImageUrl ~ "')]"
   } %}
   <section class="container pt-10 pb-20">
     <div class="flex flex-col gap-4 pb-10">

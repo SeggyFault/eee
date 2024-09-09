@@ -1,14 +1,14 @@
 {% extends 'base.twig' %}
 
 {% block content %}
-<section class="container py-16 flex flex-col gap-10">
+<section class="container flex flex-col gap-10 py-16">
   <h1 class="text-8xl">Експертиза<span class="text-eee-lime-100">_</span></h1>
-  <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
+  <div class="grid grid-cols-1 gap-5 md:grid-cols-4">
     {% for item in expertises %}
       <a href="{{ function('get_permalink', item.ID) }}">
         {% set bg_image = function('acf_get_attachment', function('get_post_thumbnail_id', item.ID)).url %}
         <div class="flex justify-center items-center h-[297px] bg-no-repeat bg-cover bg-blend-overlay bg-eee-neutral-900/40" style="background-image: url({{ bg_image }})">
-          <p class="text-eee-neutral-100 text-center px-4">{{ item.title }}</p>
+          <p class="px-4 text-center text-eee-neutral-100">{{ item.title }}</p>
         </div>
       </a>
     {% endfor %}
