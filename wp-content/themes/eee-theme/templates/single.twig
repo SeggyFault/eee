@@ -7,7 +7,7 @@
       {% include "button/template.twig" with {
           url: function('get_permalink', function( 'get_option', 'page_for_posts' )),
           classes: "border border-eee-neutral-900 rounded-full px-2.5 py-3",
-          title: "Назад",
+          title: function('pll__', "Назад"),
           icon: true,
         }
       %}

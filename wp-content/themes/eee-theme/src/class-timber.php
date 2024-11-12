@@ -60,7 +60,7 @@ class Timber {
 		$context['contacts'] = array(
 			'email'   => get_theme_mod( 'contact_email' ),
 			'phone'   => get_theme_mod( 'contact_phone' ),
-			'address' => get_theme_mod( 'contact_address' ),
+			'address' => pll__( get_theme_mod( 'contact_address' ) ),
 		);
 
 		$context['social_media'] = array(

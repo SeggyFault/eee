@@ -3,7 +3,7 @@
 {% block content %}
   {% set bgImageUrl = function('acf_get_attachment', 259).url %}
   {% include 'components/project-hero/template.twig' with {
-    heading: __('Проекти'),
+    heading: function('pll__', "Проекти"),
     image_url: bgImageUrl,
   } %}
   <section class="container py-10">
