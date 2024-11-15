@@ -38,7 +38,7 @@
 	  }
 
     strong {
-      @apply font-urbanist font-bold text-xl; 
+      @apply font-bold text-xl; 
     }
   }
 }
