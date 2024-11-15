@@ -59,7 +59,7 @@ class Certifications extends Block {
 							'key'             => 'field_' . static::$acf_block_prefix . '_text',
 							'label'           => __( 'Text', 'eee-theme' ),
 							'name'            => static::$acf_block_prefix . '_text',
-							'type'            => 'textarea',
+							'type'            => 'wysiwyg',
 							'required'        => 1,
 							'return_format'   => 'string',
 							'parent_repeater' => 'field_' . static::$acf_block_prefix . '_items',
