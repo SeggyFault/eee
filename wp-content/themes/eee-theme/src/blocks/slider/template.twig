@@ -1,15 +1,15 @@
-<div class="glide relative">
+<div class="relative glide">
   <div class="glide__track" data-glide-el="track">
     <ul class="glide__slides">
       {% for slide in slides %}
-        <li class="glide__slide relative">
-         <h2 class="text-eee-neutral-100 absolute top-16 left-1/2 -translate-x-1/2 text-xl">{{ heading }}</h2>
+        <li class="relative glide__slide">
+         <h2 class="absolute text-3xl -translate-x-1/2 text-eee-neutral-100 top-16 left-1/2">{{ heading }}</h2>
           <div class="flex justify-center items-center h-[576px] bg-no-repeat bg-cover bg-eee-neutral-900/75 bg-blend-multiply" style="background-image: url({{ slide.bg_image.url }})">
-            <div class="max-w-[512px]">
+            <div class="w-72">
               {% include "image/template.twig" with {
                 image: slide.logo,
                 width: 512,
-                allowed_sizes: ['sm'],
+                allowed_sizes: ['sm', 'md', 'lg'],
               } %}
             </div>
           </div>
@@ -18,20 +18,20 @@
     </ul>
   </div>
   <div class="glide__arrows" data-glide-el="controls">
-    <button class="glide__arrow glide__arrow--left absolute top-1/2 -translate-y-1/2 left-8" data-glide-dir="{{ '<'|escape }}">
+    <button class="absolute -translate-y-1/2 glide__arrow glide__arrow--left top-1/2 left-8" data-glide-dir="{{ '<'|escape }}">
       {% include "icons/arrow.twig" with {
         classes: "stroke-eee-neutral-100 size-12",
       } %}
     </button>
-    <button class="glide__arrow glide__arrow--right absolute top-1/2 -translate-y-1/2 right-8" data-glide-dir="{{ '>'|escape }}">
+    <button class="absolute -translate-y-1/2 glide__arrow glide__arrow--right top-1/2 right-8" data-glide-dir="{{ '>'|escape }}">
       {% include "icons/arrow.twig" with {
         classes: "stroke-eee-neutral-100 rotate-180 size-12",
       }%}
     </button>
   </div>
-  <div class="glide__bullets absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2" data-glide-el="controls[nav]">
+  <div class="absolute flex gap-2 -translate-x-1/2 glide__bullets bottom-8 left-1/2" data-glide-el="controls[nav]">
     {% for key, slide in slides %}
-      <button class="glide__bullet w-5 h-5 rounded-full border border-eee-neutral-100" data-glide-dir="={{ key }}"></button>
+      <button class="w-5 h-5 border rounded-full glide__bullet border-eee-neutral-100" data-glide-dir="={{ key }}"></button>
     {% endfor %}
   </div>
 </div>
