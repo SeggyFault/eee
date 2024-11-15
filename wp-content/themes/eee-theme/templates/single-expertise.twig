@@ -1,6 +1,7 @@
 {% extends 'base.twig' %}
 
 {% block content %}
+<main>
   <section class="container pt-10 pb-20">
     <div class="flex flex-col gap-4 pb-10">
       {# Back Button #}
@@ -11,7 +12,7 @@
           icon: true,
         }
       %}
-      <h2>{{ post.title }}</h2>
+      <h2 class="text-5xl">{{ post.title }}</h2>
       <div class="flex gap-1">
         <p>{{ post.date }}</p>
         <p><span class="text-eee-green-100">•</span> {{ get_reading_time() }}</p>
@@ -28,12 +29,13 @@
         } 
       %}
       </div>
-       <div class="flex">
-      <div class="border-l border-eee-blue-green-rules-100 max-w-prose">
-        <div class="flex flex-col gap-4">{{ post.content }}</div>
+      <div class="flex">
+        <div class="border-l border-eee-blue-green-rules-100 max-w-prose">
+          <div class="flex flex-col gap-4">{{ post.content }}</div>
+        </div>
       </div>
     </div>
-    </div>
-    
   </section>
+</main>
+
 {% endblock %}
