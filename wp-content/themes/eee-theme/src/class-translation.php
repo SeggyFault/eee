@@ -37,7 +37,7 @@ class Translation {
 		pll_register_string( 'contacts_phone_label', 'Телефон', 'eee-theme', true );
 		pll_register_string( 'contacts_email_label', 'Пошта', 'eee-theme', true );
 		pll_register_string( 'contacts_message_label', 'Відправте нам повідомлення', 'eee-theme', true );
-		pll_register_string( 'contacts_required_label', '*Обовязкові поля', 'eee-theme', true );
+		pll_register_string( 'contacts_required_label', "*Обов'язкові поля", 'eee-theme', true );
 		pll_register_string( 'back_button', 'Назад', 'eee-theme', true );
 		pll_register_string( 'more_button', 'Дізнатись більше', 'eee-theme', true );
 		pll_register_string( 'expertise', 'Експертиза', 'eee-theme', true );
