@@ -8,16 +8,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const changeSiteHeaderStyle = (isScrolled) => {
   const siteHeader = document.getElementById('site-header');
-  const siteHeaderLinks = siteHeader.querySelectorAll('nav a');
+  const siteHeaderLinks = siteHeader.querySelectorAll('.desktop-nav a');
   const logoWhite = siteHeader.querySelector('.logo-white');
   const logoBlack = siteHeader.querySelector('.logo-black');
   const isHeroBlockPresent = document.querySelector('#hero-block');
   const sideMenu = <HTMLElement>siteHeader.querySelector('.side-menu');
+  const burgerMenu = document.getElementById('burger-menu');
 
   const setStyles = (position, bgColor, linkColor, showLogoWhite, borderColor, sideMenuColor) => {
     siteHeader.style.position = position;
     siteHeader.style.backgroundColor = bgColor;
     siteHeader.style.borderColor = borderColor;
+    burgerMenu.style.stroke = linkColor;
     siteHeaderLinks.forEach((item: HTMLElement) => {
       item.style.color = linkColor;
     });
@@ -53,3 +55,11 @@ document.addEventListener('DOMContentLoaded', () => {
     html.style.overflow = 'initial';
   })
 });
+
+document.getElementById('burger-menu').addEventListener('click', () => {
+  document.getElementById('mobile-nav').style.display = 'block';
+})
+
+document.getElementById('close-menu').addEventListener('click', () => {
+  document.getElementById('mobile-nav').style.display = 'none';
+})

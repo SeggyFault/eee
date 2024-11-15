@@ -3,10 +3,10 @@
 {% block content %}
   <div class="container">
     {% for post in posts %}
-        <article class="flex gap-8 py-10 border-b border-eee-blue-green-rules-100">
+        <article class="flex flex-col gap-4 py-10 border-b lg:flex-row lg:gap-8 border-eee-blue-green-rules-100">
           <div class="min-w-[330px]">
             {% include "image/template.twig" with {
-              image_classes: 'max-w-[330px] object-cover',
+              image_classes: 'lg:max-w-[330px] object-cover',
               image: function('acf_get_attachment', function('get_post_thumbnail_id', post.ID)),
               width: 330,
               allowed_sizes: ['md', 'lg']

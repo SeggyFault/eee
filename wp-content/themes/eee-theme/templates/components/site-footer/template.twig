@@ -4,9 +4,9 @@
   <div class="container flex items-center justify-between py-12">
     <a href="{{ homepage_url }}">
         <img class="logo-white" src="{{ logo_white }}" width="89" />
-        <img class="logo-black hidden" src="{{ logo_black }}" width="89" />
+        <img class="hidden logo-black" src="{{ logo_black }}" width="89" />
     </a>
-    <ul class="flex items-center gap-3 text-eee-neutral-100 uppercase text-sm">
+    <ul class="flex items-center gap-3 text-sm uppercase text-eee-neutral-100">
       <li>Follow us</li>
       {% if social_media.facebook %}
         <li>
@@ -26,10 +26,10 @@
       </li>
       {% endif %}
     </ul>
-    <nav>
+    <nav class="hidden lg:block">
       <ul class="flex gap-12">
         {% for item in nav_items %}
-          <li class="font-bold text-sm">
+          <li class="text-sm font-bold">
             <a class="text-eee-neutral-100" href="{{ item.url }}">{{ item.title }}</a>
           </li>
         {% endfor %}
@@ -37,7 +37,7 @@
     </nav>
   </div>
   <div class="py-6 border-t-[1px] border-t-eee-neutral-100 text-eee-neutral-100 stroke-eee-lime-100 fill-eee-lime-100">
-    <ul class="container flex justify-end gap-3">
+    <ul class="container flex flex-col justify-end gap-3 lg:flex-row">
       <li>
         <a href="#" class="flex gap-2">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="inherited" class="size-6">

@@ -6,7 +6,29 @@
       <img class="logo-white" src="{{ logo_white }}" width="89" />
       <img class="hidden logo-black" src="{{ logo_black }}" width="89" />
     </a>
-    <nav>
+    <div id="burger-menu" class="lg:hidden stroke-white">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="inherit" class="size-10">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      </svg>
+    </div>
+    <!--Mobile Nav START-->
+    <nav id="mobile-nav" class="absolute top-0 left-0 hidden w-screen min-h-screen bg-white">
+      <div id="close-menu" class="flex justify-end w-full pt-4 pr-4">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+        </svg>
+      </div>
+      <ul class="flex flex-col items-center gap-12 pt-12">
+        {% for item in nav_items %}
+          <li class="font-bold">
+            <a class="text-eee-neutral-900" href="{{ item.url }}">{{ item.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+    <!--Mobile Nav END-->
+
+    <nav class="hidden desktop-nav lg:block">
       <ul class="flex gap-12">
         {% for item in nav_items %}
           <li class="text-sm font-bold">

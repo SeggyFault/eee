@@ -7,7 +7,7 @@
     image_url: bgImageUrl,
   } %}
   <section class="container py-10">
-    <div class="grid grid-cols-3 gap-16">
+    <div class="grid gap-4 md:grid-cols-2 md:gap-8 lg:gap-16 lg:grid-cols-3">
       {% for project in projects %}
         <a href="{{ function('get_permalink', project.ID) }}" class="flex flex-col gap-4">
       {% include "image/template.twig" with {

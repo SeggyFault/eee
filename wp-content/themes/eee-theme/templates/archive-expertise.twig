@@ -2,7 +2,7 @@
 
 {% block content %}
 <section class="container flex flex-col gap-10 py-16">
-  <h1 class="text-8xl">{{ function('pll__', "Експертиза") }}<span class="text-eee-lime-100">_</span></h1>
+  <h1 class="text-3xl md:text-5xl lg:text-8xl">{{ function('pll__', "Експертиза") }}<span class="text-eee-lime-100">_</span></h1>
   <div class="grid grid-cols-1 gap-5 md:grid-cols-4">
     {% for item in expertises %}
       <a href="{{ function('get_permalink', item.ID) }}">

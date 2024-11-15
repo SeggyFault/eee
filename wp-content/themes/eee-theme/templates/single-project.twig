@@ -21,13 +21,13 @@
       %}
       <h2 class="text-5xl">{{ post.title }}</h2>
       <div class="flex gap-1">
-        <p>{{ post.date }}</p>
-        <p><span class="text-eee-green-100">•</span> {{ get_reading_time() }}</p>
+        <p class="pb-0">{{ post.date }}</p>
+        <p class="pb-0"><span class="text-eee-green-100">•</span> {{ get_reading_time() }}</p>
       </div>
     </div>
-    <div class="grid grid-cols-2">
+    <div class="grid lg:grid-cols-2">
       {# Image #}
-      <div class="w-[600px]">
+      <div class="lg:w-[600px]">
         {% include "image/template.twig" with {
           image: function('acf_get_attachment', function('get_post_thumbnail_id', post.ID)),
           width: 600,
@@ -35,7 +35,7 @@
         } 
       %}
       </div>
-      <div class="flex">
+      <div class="flex pt-8">
         <div class="border-l border-eee-blue-green-rules-100 max-w-prose">
           <div class="flex flex-col gap-4">
             {{ post.content }}

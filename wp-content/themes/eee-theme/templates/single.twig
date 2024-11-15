@@ -18,9 +18,9 @@
       </div>
     </div>
 
-    <div class="grid grid-cols-2">
+    <div class="grid lg:grid-cols-2">
       {# Image #}
-      <div class="w-[600px]">
+      <div class="lg:w-[600px] pb-4">
         {% include "image/template.twig" with {
           image: function('acf_get_attachment', function('get_post_thumbnail_id', post.ID)),
           width: 600,
