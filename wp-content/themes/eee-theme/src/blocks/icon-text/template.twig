@@ -3,8 +3,8 @@
 {% block section_content %}
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-20 gap-y-6">
   {% for item in items %}
-    <div class="flex items-center gap-4">
-      <div class="flex justify-center items-center h-16 w-16 min-w-16 bg-eee-lime-100 rounded-full">
+    <a href="{{ service_page_url }}" class="flex items-center gap-4">
+      <div class="flex items-center justify-center w-16 h-16 rounded-full min-w-16 bg-eee-lime-100">
         {% include "image/template.twig" with {
           image: item.icon,
           width: 24,
@@ -12,7 +12,7 @@
         } %}
       </div>
       <p>{{ item.text }}</p>
-    </div>
+    </a>
     {% endfor %}
 </div>
 

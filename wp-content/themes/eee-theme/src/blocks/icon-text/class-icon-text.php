@@ -10,6 +10,7 @@ declare(strict_types=1);
 namespace EEE\Theme\Blocks\Icon_Text;
 
 use EEE\Theme\Blocks\Block;
+use Timber\Timber as TimberLibrary;
 
 /**
  * Block Main Functionality.
@@ -70,5 +71,29 @@ class Icon_Text extends Block {
 				),
 			),
 		);
+	}
+
+
+	/**
+	 * Sets the Custom Context for the Block.
+	 *
+	 * This method can be overridden in a particular block to modify the default
+	 * Timber context.
+	 *
+	 * @param array $context The Timber Context.
+	 * @param array $block The Gutenberg block.
+	 *
+	 * @return array The Modified Timber Context.
+	 */
+	public function set_custom_context( array $context, array $block ): array {
+		$global_context = TimberLibrary::context();
+		$context        = array_merge_recursive(
+			$context,
+			array(
+				'service_page_url' => get_the_permalink( pll_get_post( 314 ) ),
+			),
+		);
+
+		return $context;
 	}
 }
