@@ -1,4 +1,16 @@
-# Docker WordPress Local
+# Egis Ertle 
+🎯 Redesign of the Egis Ertle Engineering website, using custom Wordpress theme and Polylang plugin
+ 
+## 🚀 Tech Stack  
+- Figma, Wordpress, Git, PHP
+
+## 🔗 Live Demo  
+[Egis Ertle](https://egis-ertle.com)
+
+## 👤 Author  
+Oleksandra Masiukevych - [LinkedIn](https://www.linkedin.com/in/omasiukevych)
+
+## Docker WordPress Local
 
 This repository contains a local WordPress environment Docker setup based on:
 
@@ -9,7 +21,7 @@ This repository contains a local WordPress environment Docker setup based on:
 - [Mailhog](https://github.com/mailhog/MailHog)
 - [Xdebug](https://xdebug.org/)
 
-## Prerequisites
+### Prerequisites
 
 To use this local environment, you need:
 
@@ -17,7 +29,7 @@ To use this local environment, you need:
 1. Install [mkcert](https://github.com/FiloSottile/mkcert#macos): `brew install
 mkcert`
 
-## Usage
+### Usage
 
 To use this image in an existing WordPress project:
 
@@ -49,14 +61,14 @@ To use this image in an existing WordPress project:
    tool such as [Dnsmasq](https://thekelleys.org.uk/dnsmasq/doc.html)
 1. Run `docker-compose up` from the project root directory.
 
-## How to Use WP CLI
+### How to Use WP CLI
 
 To use WP CLI, run `docker-compose run --rm cli` followed by the WP CLI command.
 For example: `docker-compose run --rm cli plugin list`.
 
 Tip: You can create a shell alias: `alias dwp='docker-compose run --rm cli'`.
 
-## How to Switch PHP Version
+### How to Switch PHP Version
 
 To switch the PHP version, change the related PHP_VERSION variable in the `.env`
 file. Available versions are `8.3`, `8.2`, `8.0` and `7.4`. See [Docker Hub
@@ -64,13 +76,13 @@ wordpress image
 page](https://hub.docker.com/_/wordpress/tags?page=&page_size=&ordering=&name=cli-php7)
 for more info about available tags.
 
-## How to Enable HTTPS
+### How to Enable HTTPS
 
 By default, HTTPS is enabled. To make it work, you need to install `mkcert`
 library (see Prerequisite section) and generate SSL certificates (see step 3 of
 the Usage section).
 
-## How to Use Xdebug
+### How to Use Xdebug
 
 Xdebug is enabled by default. To use it with Visual Studio Code, you have to
 include `?XDEBUG_SESSION=TRUE` in the URL you are browsing, and you have to use
